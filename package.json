@@ -30,7 +30,7 @@
     "jotai": "2.13.1",
     "lightweight-charts": "5.2.0",
     "lodash.snakecase": "4.1.1",
-    "primereact": "10.9.7",
+    "primereact": "11.0.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-hook-form": "7.62.0",
