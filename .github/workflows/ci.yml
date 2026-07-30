@@ -31,7 +31,7 @@ jobs:
       VITE_LAUNCHPAD_ADDRESS: '0x0000000000000000000000000000000000000000'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Corepack must be enabled BEFORE setup-node: the `cache: yarn` option shells
       # out to `yarn cache dir` inside that step, and the runner's global Yarn 1
