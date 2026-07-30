@@ -1,0 +1,33 @@
+# Reads values from the .env file next to this one. See .env.template.
+#
+# The VITE_* values are build arguments, not runtime environment: Vite inlines them
+# into the bundle when the image is built. Changing .env therefore requires a rebuild
+# (`docker compose build`), not just a restart.
+#
+# The "tokenzyme" network is shared with tokenzyme-core and tokenzyme-indexer, and is
+# declared external so the three stacks can talk to each other. Create it once:
+#
+#   docker network create tokenzyme
+
+networks:
+  tokenzyme:
+    external: true
+
+services:
+  tokenzyme-app:
+    build:
+      context: .
+      args:
+        VITE_CORE_URL: ${VITE_CORE_URL}
+        VITE_INDEXER_URL: ${VITE_INDEXER_URL}
+        VITE_REOWN_PROJECT_ID: ${VITE_REOWN_PROJECT_ID}
+        VITE_NETWORK: ${VITE_NETWORK}
+        VITE_RPC_URL: ${VITE_RPC_URL}
+        VITE_BLOCK_EXPLORER_URL: ${VITE_BLOCK_EXPLORER_URL}
+        VITE_LAUNCHPAD_ADDRESS: ${VITE_LAUNCHPAD_ADDRESS}
+    container_name: tokenzyme-app
+    restart: always
+    ports:
+      - 3001:3001
+    networks:
+      - tokenzyme

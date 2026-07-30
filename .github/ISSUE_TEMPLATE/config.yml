@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/tokenzyme/tokenzyme-app/security/advisories/new
+    about: Never report vulnerabilities in a public issue. Use private disclosure — see SECURITY.md.
+  - name: Report a smart contract issue
+    url: https://github.com/tokenzyme/tokenzyme-contracts/issues
+    about: Issues with the on-chain protocol belong in the contracts repository.
+  - name: Report wrong or missing data
+    url: https://github.com/tokenzyme/tokenzyme-indexer/issues
+    about: If prices or trade history are wrong rather than mis-rendered, it is likely an indexer issue.
+  - name: Ask a question
+    url: https://github.com/tokenzyme/tokenzyme-app/discussions
+    about: Questions and design discussions belong in Discussions, not issues.

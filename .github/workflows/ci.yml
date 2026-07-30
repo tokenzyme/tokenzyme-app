@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and lint
+    runs-on: ubuntu-latest
+
+    # The build inlines VITE_* variables, so it needs a full set to compile —
+    # src/utils/env.ts throws on any missing one. These are placeholders: nothing
+    # here is secret, and nothing here reaches a real network.
+    env:
+      VITE_CORE_URL: http://localhost:3000
+      VITE_INDEXER_URL: http://localhost:3002
+      VITE_REOWN_PROJECT_ID: ci-placeholder
+      VITE_NETWORK: fork
+      VITE_RPC_URL: http://127.0.0.1:8545
+      VITE_BLOCK_EXPLORER_URL: https://sonicscan.org
+      VITE_LAUNCHPAD_ADDRESS: '0x0000000000000000000000000000000000000000'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: yarn
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build
+        run: yarn build
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Check formatting
+        run: yarn prettier --check './**/*.{ts,tsx,cts,mts,js,cjs,mjs,json,yml,yaml}'

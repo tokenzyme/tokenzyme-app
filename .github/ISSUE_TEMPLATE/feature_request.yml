@@ -1,0 +1,44 @@
+name: Feature request
+description: Propose a change to the web client
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the limitation you are hitting, not just the solution you have in mind.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+
+  - type: dropdown
+    id: backend
+    attributes:
+      label: Does this need backend changes?
+      description: New data usually means a new GraphQL field in tokenzyme-core, and possibly a new indexed field in tokenzyme-indexer.
+      options:
+        - 'No — client only'
+        - 'Yes — needs a change in tokenzyme-core'
+        - 'Yes — needs a change in tokenzyme-indexer'
+        - Not sure
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: signing
+    attributes:
+      label: Scope
+      options:
+        - label: This touches a transaction-signing flow
+        - label: This touches the `/tokens/:address/chart` route, which the mobile app embeds
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

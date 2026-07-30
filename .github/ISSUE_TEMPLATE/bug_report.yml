@@ -1,0 +1,77 @@
+name: Bug report
+description: Report incorrect behaviour in the web client
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not use this form for security vulnerabilities**, especially anything where
+        the transaction signed differs from what the interface displayed. Report those
+        privately — see [SECURITY.md](https://github.com/tokenzyme/tokenzyme-app/blob/main/SECURITY.md).
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the incorrect behaviour and what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where?
+      options:
+        - Token list
+        - Launch a token
+        - Token page — chart
+        - Token page — buy/sell
+        - Token page — comments
+        - Wallet connection
+        - Startup / configuration
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: network
+    attributes:
+      label: Network
+      options:
+        - mainnet
+        - testnet
+        - testnet-legacy
+        - fork
+    validations:
+      required: true
+
+  - type: input
+    id: wallet
+    attributes:
+      label: Wallet and browser
+      placeholder: 'e.g. MetaMask on Chrome 141, macOS'
+
+  - type: input
+    id: transaction
+    attributes:
+      label: Transaction hash
+      description: If a transaction was involved.
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Browser console output
+      render: shell
+
+  - type: input
+    id: commit
+    attributes:
+      label: Commit or version
+      placeholder: 'e.g. main @ a1b2c3d'
