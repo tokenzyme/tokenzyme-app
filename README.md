@@ -128,7 +128,8 @@ one is required — `src/utils/env.ts` throws at startup if any is missing.
 | `VITE_INDEXER_URL` | Trades and price WebSocket. |
 | `VITE_REOWN_PROJECT_ID` | Create your own at [dashboard.reown.com](https://dashboard.reown.com). Free tier is enough. |
 | `VITE_NETWORK` | `mainnet`, `testnet`, `testnet-legacy` or `fork`. |
-| `VITE_RPC_URL`, `VITE_BLOCK_EXPLORER_URL`, `VITE_LAUNCHPAD_ADDRESS` | Must all match `VITE_NETWORK`. Addresses are in the [contracts README](https://github.com/tokenzyme/tokenzyme-contracts#deployed-addresses). |
+| `VITE_RPC_URL`, `VITE_BLOCK_EXPLORER_URL` | Must match `VITE_NETWORK`. |
+| `VITE_LAUNCHPAD_ADDRESS` | The proxy address of **your own** deployment — this project publishes none. See [tokenzyme-contracts](https://github.com/tokenzyme/tokenzyme-contracts#deploying). |
 
 > [!NOTE]
 > These are Vite variables: they are read at **build** time and inlined into the
