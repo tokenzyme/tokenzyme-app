@@ -1,4 +1,4 @@
-import { IconBrandReddit, IconBrandTelegram, IconBrandX, IconVocabulary, IconWallet } from '@tabler/icons-react';
+import { IconWallet } from '@tabler/icons-react';
 import { Avatar } from 'primereact/avatar';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
@@ -25,11 +25,6 @@ export function App(): JSX.Element {
             <Link to="/" className="text-xl font-bold">
               Tokenzyme
             </Link>
-            <div>
-              <a href="https://tokenzyme.gitbook.io/tokenzyme" target="_blank" rel="noreferrer">
-                <Button type="button" icon={<IconVocabulary />} label="Docs" severity="secondary" size="small" text />
-              </a>
-            </div>
             <div className="flex items-center gap-2">
               <Link to="/launch">
                 <Button type="button" label="Launch a Token" size="small" />
@@ -59,18 +54,6 @@ export function App(): JSX.Element {
         </main>
         <footer className="flex flex-wrap justify-between items-center gap-2 text-secondary py-3 px-4 md:px-8">
           <span>© Tokenzyme 2025</span>
-          <span className="flex items-center">
-            <span>Follow us:</span>
-            <a href="https://x.com/tokenzyme" target="_blank" rel="noreferrer">
-              <Button type="button" icon={<IconBrandX />} severity="secondary" size="small" text rounded />
-            </a>
-            <a href="https://t.me/tokenzyme" target="_blank" rel="noreferrer">
-              <Button type="button" icon={<IconBrandTelegram />} severity="secondary" size="small" text rounded />
-            </a>
-            <a href="https://reddit.com/r/tokenzyme" target="_blank" rel="noreferrer">
-              <Button type="button" icon={<IconBrandReddit />} severity="secondary" size="small" text rounded />
-            </a>
-          </span>
         </footer>
       </div>
     </div>
