@@ -14,8 +14,6 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
   Float: { input: number; output: number; }
-  /** A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
-  Date: { input: string; output: string; }
   /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   DateTime: { input: string; output: string; }
   /** Decimal value as a number */
@@ -32,51 +30,12 @@ export type AddCommentInput = {
   tokenAddress: Scalars['String']['input'];
 };
 
-export type Admin = {
-  __typename?: 'Admin';
-  email: Scalars['String']['output'];
-  id: Scalars['Int']['output'];
-  name: Scalars['String']['output'];
-};
-
-export type AppAccount = {
-  __typename?: 'AppAccount';
-  email: Scalars['String']['output'];
-  referralCode: Scalars['String']['output'];
-  rewardsClaimed: Scalars['Int']['output'];
-  tgHandle?: Maybe<Scalars['String']['output']>;
-  xHandle?: Maybe<Scalars['String']['output']>;
-};
-
-export type AppSignInInput = {
-  email: Scalars['String']['input'];
-  otp: Scalars['String']['input'];
-  referralCode?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AppSignInResult = {
-  __typename?: 'AppSignInResult';
-  appAccount: AppAccount;
-  token: Scalars['String']['output'];
-};
-
-export type AvailableCheckIn = {
-  __typename?: 'AvailableCheckIn';
-  dueDate: Scalars['DateTime']['output'];
-  reward: Scalars['Int']['output'];
-};
-
 export type Comment = {
   __typename?: 'Comment';
   accountAddress: Scalars['String']['output'];
   createdAt: Scalars['DateTime']['output'];
   id: Scalars['Int']['output'];
   text: Scalars['String']['output'];
-};
-
-export type CompleteSocialTaskInput = {
-  proofUrl?: InputMaybe<Scalars['String']['input']>;
-  taskId: Scalars['Int']['input'];
 };
 
 export type CreateSignatureMessageInput = {
@@ -87,14 +46,8 @@ export type CreateSignatureMessageInput = {
 export type Mutation = {
   __typename?: 'Mutation';
   addComment: Comment;
-  appSignIn: AppSignInResult;
-  checkIn: Scalars['Boolean']['output'];
-  completeSocialTask: Scalars['Boolean']['output'];
   createSignatureMessage: SignatureMessage;
-  registerSocialTask: SocialTask;
-  sendAppSignInOtp: Scalars['Boolean']['output'];
   signIn: SignInResult;
-  updateSocialNetworkHandle: AppAccount;
 };
 
 
@@ -103,28 +56,8 @@ export type MutationAddCommentArgs = {
 };
 
 
-export type MutationAppSignInArgs = {
-  input: AppSignInInput;
-};
-
-
-export type MutationCompleteSocialTaskArgs = {
-  input: CompleteSocialTaskInput;
-};
-
-
 export type MutationCreateSignatureMessageArgs = {
   input: CreateSignatureMessageInput;
-};
-
-
-export type MutationRegisterSocialTaskArgs = {
-  input: RegisterSocialTaskInput;
-};
-
-
-export type MutationSendAppSignInOtpArgs = {
-  input: SendAppSignInOtpInput;
 };
 
 
@@ -132,25 +65,12 @@ export type MutationSignInArgs = {
   input: SignInInput;
 };
 
-
-export type MutationUpdateSocialNetworkHandleArgs = {
-  input: UpdateSocialNetworkHandleInput;
-};
-
 export type Query = {
   __typename?: 'Query';
-  admin: Admin;
-  appAccount: AppAccount;
-  availableCheckIn?: Maybe<AvailableCheckIn>;
   comments: Array<Comment>;
   ethPrice: Scalars['Float']['output'];
   firstPromotedTokensOfMonth: Array<Token>;
-  hasAppAccount: Scalars['Boolean']['output'];
   isTokenRegistered: Scalars['Boolean']['output'];
-  latestSocialTasks: Array<SocialTask>;
-  nextCheckInDate: Scalars['DateTime']['output'];
-  pendingSocialTasks: Array<SocialTask>;
-  referralInfo: ReferralInfo;
   token: Token;
   tokenLogoUploadUrl: UploadSignedUrl;
   tokens: Array<Token>;
@@ -167,24 +87,8 @@ export type QueryCommentsArgs = {
 };
 
 
-export type QueryHasAppAccountArgs = {
-  email: Scalars['String']['input'];
-};
-
-
 export type QueryIsTokenRegisteredArgs = {
   address: Scalars['String']['input'];
-};
-
-
-export type QueryLatestSocialTasksArgs = {
-  pageSize: Scalars['Int']['input'];
-};
-
-
-export type QueryPendingSocialTasksArgs = {
-  lastTaskId?: InputMaybe<Scalars['Int']['input']>;
-  pageSize: Scalars['Int']['input'];
 };
 
 
@@ -219,28 +123,6 @@ export type QueryTradesArgs = {
   tokenAddress: Scalars['String']['input'];
 };
 
-export type ReferralInfo = {
-  __typename?: 'ReferralInfo';
-  refereesCount: Scalars['Int']['output'];
-  rewardByReferee: Scalars['Int']['output'];
-};
-
-export type RegisterSocialTaskInput = {
-  description: Scalars['String']['input'];
-  dueDate?: InputMaybe<Scalars['Date']['input']>;
-  isProofPrefixedByHandleUrl: Scalars['Boolean']['input'];
-  isProofRequired: Scalars['Boolean']['input'];
-  network: SocialNetwork;
-  proofInstructions?: InputMaybe<Scalars['String']['input']>;
-  reward: Scalars['Int']['input'];
-  targetUrl: Scalars['String']['input'];
-  title: Scalars['String']['input'];
-};
-
-export type SendAppSignInOtpInput = {
-  email: Scalars['String']['input'];
-};
-
 export type SignInInput = {
   signature: Scalars['String']['input'];
   signatureMessageId: Scalars['String']['input'];
@@ -270,26 +152,6 @@ export type SocialMedia = {
   redditUrl?: Maybe<Scalars['String']['output']>;
   telegramUrl?: Maybe<Scalars['String']['output']>;
   xUrl?: Maybe<Scalars['String']['output']>;
-};
-
-export enum SocialNetwork {
-  TELEGRAM = 'TELEGRAM',
-  X = 'X'
-}
-
-export type SocialTask = {
-  __typename?: 'SocialTask';
-  createdAt: Scalars['DateTime']['output'];
-  description: Scalars['String']['output'];
-  dueDate?: Maybe<Scalars['Date']['output']>;
-  id: Scalars['Int']['output'];
-  isProofPrefixedByHandleUrl: Scalars['Boolean']['output'];
-  isProofRequired: Scalars['Boolean']['output'];
-  network: SocialNetwork;
-  proofInstructions?: Maybe<Scalars['String']['output']>;
-  reward: Scalars['Int']['output'];
-  targetUrl: Scalars['String']['output'];
-  title: Scalars['String']['output'];
 };
 
 export type Token = {
@@ -353,11 +215,6 @@ export enum TradeType {
   SELL = 'SELL'
 }
 
-export type UpdateSocialNetworkHandleInput = {
-  handle: Scalars['String']['input'];
-  network: SocialNetwork;
-};
-
 export type UploadSignedUrl = {
   __typename?: 'UploadSignedUrl';
   cdnUrl: Scalars['String']['output'];
@@ -373,25 +230,6 @@ export type ListTradeCandlesQueryVariables = Exact<{
 
 
 export type ListTradeCandlesQuery = { __typename?: 'Query', tradeCandles: Array<{ __typename?: 'TradeCandle', time: number, open: number, high: number, low: number, close: number, volume: number }> };
-
-export type GetAdminQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetAdminQuery = { __typename?: 'Query', admin: { __typename?: 'Admin', id: number, name: string } };
-
-export type ListLatestSocialTasksQueryVariables = Exact<{
-  pageSize: Scalars['Int']['input'];
-}>;
-
-
-export type ListLatestSocialTasksQuery = { __typename?: 'Query', latestSocialTasks: Array<{ __typename?: 'SocialTask', network: SocialNetwork, title: string, description: string, targetUrl: string, reward: number, isProofRequired: boolean, isProofPrefixedByHandleUrl: boolean, proofInstructions?: string | null, dueDate?: string | null }> };
-
-export type RegisterSocialTaskMutationVariables = Exact<{
-  input: RegisterSocialTaskInput;
-}>;
-
-
-export type RegisterSocialTaskMutation = { __typename?: 'Mutation', registerSocialTask: { __typename?: 'SocialTask', id: number } };
 
 export type ListTokensQueryVariables = Exact<{
   sortType: TokenSortType;
@@ -479,9 +317,6 @@ export type GetEthPriceQuery = { __typename?: 'Query', ethPrice: number };
 
 
 export const ListTradeCandlesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"ListTradeCandles"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"tokenAddress"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"resolution"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"pageSize"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"lastCandleTimestamp"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Float"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tradeCandles"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"tokenAddress"},"value":{"kind":"Variable","name":{"kind":"Name","value":"tokenAddress"}}},{"kind":"Argument","name":{"kind":"Name","value":"resolution"},"value":{"kind":"Variable","name":{"kind":"Name","value":"resolution"}}},{"kind":"Argument","name":{"kind":"Name","value":"pageSize"},"value":{"kind":"Variable","name":{"kind":"Name","value":"pageSize"}}},{"kind":"Argument","name":{"kind":"Name","value":"lastCandleTimestamp"},"value":{"kind":"Variable","name":{"kind":"Name","value":"lastCandleTimestamp"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"time"}},{"kind":"Field","name":{"kind":"Name","value":"open"}},{"kind":"Field","name":{"kind":"Name","value":"high"}},{"kind":"Field","name":{"kind":"Name","value":"low"}},{"kind":"Field","name":{"kind":"Name","value":"close"}},{"kind":"Field","name":{"kind":"Name","value":"volume"}}]}}]}}]} as unknown as DocumentNode<ListTradeCandlesQuery, ListTradeCandlesQueryVariables>;
-export const GetAdminDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAdmin"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"admin"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]} as unknown as DocumentNode<GetAdminQuery, GetAdminQueryVariables>;
-export const ListLatestSocialTasksDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"ListLatestSocialTasks"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"pageSize"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"latestSocialTasks"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"pageSize"},"value":{"kind":"Variable","name":{"kind":"Name","value":"pageSize"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"network"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"targetUrl"}},{"kind":"Field","name":{"kind":"Name","value":"reward"}},{"kind":"Field","name":{"kind":"Name","value":"isProofRequired"}},{"kind":"Field","name":{"kind":"Name","value":"isProofPrefixedByHandleUrl"}},{"kind":"Field","name":{"kind":"Name","value":"proofInstructions"}},{"kind":"Field","name":{"kind":"Name","value":"dueDate"}}]}}]}}]} as unknown as DocumentNode<ListLatestSocialTasksQuery, ListLatestSocialTasksQueryVariables>;
-export const RegisterSocialTaskDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"RegisterSocialTask"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"RegisterSocialTaskInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"registerSocialTask"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}}]}}]}}]} as unknown as DocumentNode<RegisterSocialTaskMutation, RegisterSocialTaskMutationVariables>;
 export const ListTokensDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"ListTokens"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"sortType"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"TokenSortType"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"pageSize"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"lastTokenAddress"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tokens"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sortType"},"value":{"kind":"Variable","name":{"kind":"Name","value":"sortType"}}},{"kind":"Argument","name":{"kind":"Name","value":"pageSize"},"value":{"kind":"Variable","name":{"kind":"Name","value":"pageSize"}}},{"kind":"Argument","name":{"kind":"Name","value":"lastTokenAddress"},"value":{"kind":"Variable","name":{"kind":"Name","value":"lastTokenAddress"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"address"}},{"kind":"Field","name":{"kind":"Name","value":"creatorAddress"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"symbol"}},{"kind":"Field","name":{"kind":"Name","value":"logoUrl"}},{"kind":"Field","name":{"kind":"Name","value":"totalSupply"}},{"kind":"Field","name":{"kind":"Name","value":"bondingCurveSupply"}},{"kind":"Field","name":{"kind":"Name","value":"reserve"}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"tradesCount"}},{"kind":"Field","name":{"kind":"Name","value":"commentsCount"}}]}}]}}]} as unknown as DocumentNode<ListTokensQuery, ListTokensQueryVariables>;
 export const ListFirstPromotedTokensOfMonthDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"ListFirstPromotedTokensOfMonth"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"firstPromotedTokensOfMonth"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"address"}},{"kind":"Field","name":{"kind":"Name","value":"creatorAddress"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"symbol"}},{"kind":"Field","name":{"kind":"Name","value":"logoUrl"}}]}}]}}]} as unknown as DocumentNode<ListFirstPromotedTokensOfMonthQuery, ListFirstPromotedTokensOfMonthQueryVariables>;
 export const IsTokenRegisteredDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"IsTokenRegistered"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"address"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"isTokenRegistered"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"address"},"value":{"kind":"Variable","name":{"kind":"Name","value":"address"}}}]}]}}]} as unknown as DocumentNode<IsTokenRegisteredQuery, IsTokenRegisteredQueryVariables>;

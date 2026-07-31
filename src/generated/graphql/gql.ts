@@ -15,9 +15,6 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 type Documents = {
     "\n  query ListTradeCandles($tokenAddress: String!, $resolution: String!, $pageSize: Int!, $lastCandleTimestamp: Float) {\n    tradeCandles(\n      tokenAddress: $tokenAddress,\n      resolution: $resolution,\n      pageSize: $pageSize,\n      lastCandleTimestamp: $lastCandleTimestamp\n    ) {\n      time\n      open\n      high\n      low\n      close\n      volume\n    }\n  }\n": typeof types.ListTradeCandlesDocument,
-    "\n  query GetAdmin {\n    admin {\n      id\n      name\n    }\n  }\n": typeof types.GetAdminDocument,
-    "\n  query ListLatestSocialTasks($pageSize: Int!) {\n    latestSocialTasks(pageSize: $pageSize) {\n      network\n      title\n      description\n      targetUrl\n      reward\n      isProofRequired\n      isProofPrefixedByHandleUrl\n      proofInstructions\n      dueDate\n    }\n  }\n": typeof types.ListLatestSocialTasksDocument,
-    "\n  mutation RegisterSocialTask($input: RegisterSocialTaskInput!) {\n    registerSocialTask(input: $input) {\n      id\n    }\n  }\n": typeof types.RegisterSocialTaskDocument,
     "\n  query ListTokens($sortType: TokenSortType!, $pageSize: Int, $lastTokenAddress: String) {\n    tokens(sortType: $sortType, pageSize: $pageSize, lastTokenAddress: $lastTokenAddress) {\n      address\n      creatorAddress\n      name\n      symbol\n      logoUrl\n      totalSupply\n      bondingCurveSupply\n      reserve\n      price\n      createdAt\n      tradesCount\n      commentsCount\n    }\n  }\n": typeof types.ListTokensDocument,
     "\n  query ListFirstPromotedTokensOfMonth {\n    firstPromotedTokensOfMonth {\n      address\n      creatorAddress\n      name\n      symbol\n      logoUrl\n    }\n  }\n": typeof types.ListFirstPromotedTokensOfMonthDocument,
     "\n  query IsTokenRegistered($address: String!) {\n    isTokenRegistered(address: $address)\n  }\n": typeof types.IsTokenRegisteredDocument,
@@ -33,9 +30,6 @@ type Documents = {
 };
 const documents: Documents = {
     "\n  query ListTradeCandles($tokenAddress: String!, $resolution: String!, $pageSize: Int!, $lastCandleTimestamp: Float) {\n    tradeCandles(\n      tokenAddress: $tokenAddress,\n      resolution: $resolution,\n      pageSize: $pageSize,\n      lastCandleTimestamp: $lastCandleTimestamp\n    ) {\n      time\n      open\n      high\n      low\n      close\n      volume\n    }\n  }\n": types.ListTradeCandlesDocument,
-    "\n  query GetAdmin {\n    admin {\n      id\n      name\n    }\n  }\n": types.GetAdminDocument,
-    "\n  query ListLatestSocialTasks($pageSize: Int!) {\n    latestSocialTasks(pageSize: $pageSize) {\n      network\n      title\n      description\n      targetUrl\n      reward\n      isProofRequired\n      isProofPrefixedByHandleUrl\n      proofInstructions\n      dueDate\n    }\n  }\n": types.ListLatestSocialTasksDocument,
-    "\n  mutation RegisterSocialTask($input: RegisterSocialTaskInput!) {\n    registerSocialTask(input: $input) {\n      id\n    }\n  }\n": types.RegisterSocialTaskDocument,
     "\n  query ListTokens($sortType: TokenSortType!, $pageSize: Int, $lastTokenAddress: String) {\n    tokens(sortType: $sortType, pageSize: $pageSize, lastTokenAddress: $lastTokenAddress) {\n      address\n      creatorAddress\n      name\n      symbol\n      logoUrl\n      totalSupply\n      bondingCurveSupply\n      reserve\n      price\n      createdAt\n      tradesCount\n      commentsCount\n    }\n  }\n": types.ListTokensDocument,
     "\n  query ListFirstPromotedTokensOfMonth {\n    firstPromotedTokensOfMonth {\n      address\n      creatorAddress\n      name\n      symbol\n      logoUrl\n    }\n  }\n": types.ListFirstPromotedTokensOfMonthDocument,
     "\n  query IsTokenRegistered($address: String!) {\n    isTokenRegistered(address: $address)\n  }\n": types.IsTokenRegisteredDocument,
@@ -68,18 +62,6 @@ export function gql(source: string): unknown;
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "\n  query ListTradeCandles($tokenAddress: String!, $resolution: String!, $pageSize: Int!, $lastCandleTimestamp: Float) {\n    tradeCandles(\n      tokenAddress: $tokenAddress,\n      resolution: $resolution,\n      pageSize: $pageSize,\n      lastCandleTimestamp: $lastCandleTimestamp\n    ) {\n      time\n      open\n      high\n      low\n      close\n      volume\n    }\n  }\n"): (typeof documents)["\n  query ListTradeCandles($tokenAddress: String!, $resolution: String!, $pageSize: Int!, $lastCandleTimestamp: Float) {\n    tradeCandles(\n      tokenAddress: $tokenAddress,\n      resolution: $resolution,\n      pageSize: $pageSize,\n      lastCandleTimestamp: $lastCandleTimestamp\n    ) {\n      time\n      open\n      high\n      low\n      close\n      volume\n    }\n  }\n"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "\n  query GetAdmin {\n    admin {\n      id\n      name\n    }\n  }\n"): (typeof documents)["\n  query GetAdmin {\n    admin {\n      id\n      name\n    }\n  }\n"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "\n  query ListLatestSocialTasks($pageSize: Int!) {\n    latestSocialTasks(pageSize: $pageSize) {\n      network\n      title\n      description\n      targetUrl\n      reward\n      isProofRequired\n      isProofPrefixedByHandleUrl\n      proofInstructions\n      dueDate\n    }\n  }\n"): (typeof documents)["\n  query ListLatestSocialTasks($pageSize: Int!) {\n    latestSocialTasks(pageSize: $pageSize) {\n      network\n      title\n      description\n      targetUrl\n      reward\n      isProofRequired\n      isProofPrefixedByHandleUrl\n      proofInstructions\n      dueDate\n    }\n  }\n"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "\n  mutation RegisterSocialTask($input: RegisterSocialTaskInput!) {\n    registerSocialTask(input: $input) {\n      id\n    }\n  }\n"): (typeof documents)["\n  mutation RegisterSocialTask($input: RegisterSocialTaskInput!) {\n    registerSocialTask(input: $input) {\n      id\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
