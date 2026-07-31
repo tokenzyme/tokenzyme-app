@@ -12,14 +12,8 @@ export type { AggregatorV3Interface } from "./@chainlink/contracts/src/v0.8/shar
 export { AggregatorV3Interface__factory } from "./factories/@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface__factory";
 export type { OwnableUpgradeable } from "./@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable";
 export { OwnableUpgradeable__factory } from "./factories/@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable__factory";
-export type { Initializable } from "./@openzeppelin/contracts-upgradeable/proxy/utils/Initializable";
-export { Initializable__factory } from "./factories/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable__factory";
-export type { UUPSUpgradeable } from "./@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable";
-export { UUPSUpgradeable__factory } from "./factories/@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable__factory";
 export type { ContextUpgradeable } from "./@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable";
 export { ContextUpgradeable__factory } from "./factories/@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable__factory";
-export type { ReentrancyGuardUpgradeable } from "./@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable";
-export { ReentrancyGuardUpgradeable__factory } from "./factories/@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable__factory";
 export type { AccessControl } from "./@openzeppelin/contracts/access/AccessControl";
 export { AccessControl__factory } from "./factories/@openzeppelin/contracts/access/AccessControl__factory";
 export type { IAccessControl } from "./@openzeppelin/contracts/access/IAccessControl";
@@ -44,6 +38,10 @@ export type { ERC1967Utils } from "./@openzeppelin/contracts/proxy/ERC1967/ERC19
 export { ERC1967Utils__factory } from "./factories/@openzeppelin/contracts/proxy/ERC1967/ERC1967Utils__factory";
 export type { Proxy } from "./@openzeppelin/contracts/proxy/Proxy";
 export { Proxy__factory } from "./factories/@openzeppelin/contracts/proxy/Proxy__factory";
+export type { Initializable } from "./@openzeppelin/contracts/proxy/utils/Initializable";
+export { Initializable__factory } from "./factories/@openzeppelin/contracts/proxy/utils/Initializable__factory";
+export type { UUPSUpgradeable } from "./@openzeppelin/contracts/proxy/utils/UUPSUpgradeable";
+export { UUPSUpgradeable__factory } from "./factories/@openzeppelin/contracts/proxy/utils/UUPSUpgradeable__factory";
 export type { ERC20 } from "./@openzeppelin/contracts/token/ERC20/ERC20";
 export { ERC20__factory } from "./factories/@openzeppelin/contracts/token/ERC20/ERC20__factory";
 export type { IERC20Metadata } from "./@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata";
@@ -62,6 +60,8 @@ export type { IERC165 } from "./@openzeppelin/contracts/utils/introspection/IERC
 export { IERC165__factory } from "./factories/@openzeppelin/contracts/utils/introspection/IERC165__factory";
 export type { SafeCast } from "./@openzeppelin/contracts/utils/math/SafeCast";
 export { SafeCast__factory } from "./factories/@openzeppelin/contracts/utils/math/SafeCast__factory";
+export type { ReentrancyGuard } from "./@openzeppelin/contracts/utils/ReentrancyGuard";
+export { ReentrancyGuard__factory } from "./factories/@openzeppelin/contracts/utils/ReentrancyGuard__factory";
 export type { INonfungiblePositionManager } from "./contracts/interfaces/external/INonfungiblePositionManager";
 export { INonfungiblePositionManager__factory } from "./factories/contracts/interfaces/external/INonfungiblePositionManager__factory";
 export type { IPoolFactory } from "./contracts/interfaces/external/IPoolFactory";

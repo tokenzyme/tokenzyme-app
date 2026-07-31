@@ -6,7 +6,7 @@ import { Contract, Interface, type ContractRunner } from "ethers";
 import type {
   Initializable,
   InitializableInterface,
-} from "../../../../../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable";
+} from "../../../../../@openzeppelin/contracts/proxy/utils/Initializable";
 
 const _abi = [
   {

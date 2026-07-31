@@ -3,10 +3,8 @@
 /* eslint-disable */
 import type {
   BaseContract,
-  BigNumberish,
   FunctionFragment,
   Interface,
-  EventFragment,
   ContractRunner,
   ContractMethod,
   Listener,
@@ -15,31 +13,16 @@ import type {
   TypedContractEvent,
   TypedDeferredTopicFilter,
   TypedEventLog,
-  TypedLogDescription,
   TypedListener,
 } from "../../../common";
 
-export interface ReentrancyGuardUpgradeableInterface extends Interface {
-  getEvent(nameOrSignatureOrTopic: "Initialized"): EventFragment;
-}
+export interface ReentrancyGuardInterface extends Interface {}
 
-export namespace InitializedEvent {
-  export type InputTuple = [version: BigNumberish];
-  export type OutputTuple = [version: bigint];
-  export interface OutputObject {
-    version: bigint;
-  }
-  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
-  export type Filter = TypedDeferredTopicFilter<Event>;
-  export type Log = TypedEventLog<Event>;
-  export type LogDescription = TypedLogDescription<Event>;
-}
-
-export interface ReentrancyGuardUpgradeable extends BaseContract {
-  connect(runner?: ContractRunner | null): ReentrancyGuardUpgradeable;
+export interface ReentrancyGuard extends BaseContract {
+  connect(runner?: ContractRunner | null): ReentrancyGuard;
   waitForDeployment(): Promise<this>;
 
-  interface: ReentrancyGuardUpgradeableInterface;
+  interface: ReentrancyGuardInterface;
 
   queryFilter<TCEvent extends TypedContractEvent>(
     event: TCEvent,
@@ -82,24 +65,5 @@ export interface ReentrancyGuardUpgradeable extends BaseContract {
     key: string | FunctionFragment
   ): T;
 
-  getEvent(
-    key: "Initialized"
-  ): TypedContractEvent<
-    InitializedEvent.InputTuple,
-    InitializedEvent.OutputTuple,
-    InitializedEvent.OutputObject
-  >;
-
-  filters: {
-    "Initialized(uint64)": TypedContractEvent<
-      InitializedEvent.InputTuple,
-      InitializedEvent.OutputTuple,
-      InitializedEvent.OutputObject
-    >;
-    Initialized: TypedContractEvent<
-      InitializedEvent.InputTuple,
-      InitializedEvent.OutputTuple,
-      InitializedEvent.OutputObject
-    >;
-  };
+  filters: {};
 }

@@ -6,7 +6,7 @@ import { Contract, Interface, type ContractRunner } from "ethers";
 import type {
   UUPSUpgradeable,
   UUPSUpgradeableInterface,
-} from "../../../../../@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable";
+} from "../../../../../@openzeppelin/contracts/proxy/utils/UUPSUpgradeable";
 
 const _abi = [
   {
@@ -43,16 +43,6 @@ const _abi = [
   },
   {
     inputs: [],
-    name: "InvalidInitialization",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "NotInitializing",
-    type: "error",
-  },
-  {
-    inputs: [],
     name: "UUPSUnauthorizedCallContext",
     type: "error",
   },
@@ -66,19 +56,6 @@ const _abi = [
     ],
     name: "UUPSUnsupportedProxiableUUID",
     type: "error",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "uint64",
-        name: "version",
-        type: "uint64",
-      },
-    ],
-    name: "Initialized",
-    type: "event",
   },
   {
     anonymous: false,
