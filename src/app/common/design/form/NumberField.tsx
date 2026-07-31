@@ -3,8 +3,10 @@ import { classNames } from 'primereact/utils';
 import { JSX, ReactNode } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-interface NumberFieldProps
-  extends Omit<InputNumberProps, 'inputId' | 'inputRef' | 'name' | 'value' | 'disabled' | 'onChange' | 'onBlur'> {
+interface NumberFieldProps extends Omit<
+  InputNumberProps,
+  'inputId' | 'inputRef' | 'name' | 'value' | 'disabled' | 'onChange' | 'onBlur'
+> {
   name: string;
   label?: string;
   helper?: string;

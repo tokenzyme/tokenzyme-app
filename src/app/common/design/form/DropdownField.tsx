@@ -3,8 +3,10 @@ import { classNames } from 'primereact/utils';
 import { JSX } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-interface DropdownFieldProps
-  extends Omit<DropdownProps, 'inputId' | 'focusInputRef' | 'name' | 'value' | 'onChange' | 'onBlur'> {
+interface DropdownFieldProps extends Omit<
+  DropdownProps,
+  'inputId' | 'focusInputRef' | 'name' | 'value' | 'onChange' | 'onBlur'
+> {
   name: string;
   label?: string;
   helper?: string;

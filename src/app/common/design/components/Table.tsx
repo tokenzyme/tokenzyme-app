@@ -2,11 +2,10 @@ import { DataTable, DataTableBaseProps } from 'primereact/datatable';
 import { Tooltip } from 'primereact/tooltip';
 import { JSX, ReactNode } from 'react';
 
-interface TableProps
-  extends Omit<
-    DataTableBaseProps<object[]>,
-    'currentPageReportTemplate' | 'paginator' | 'paginatorTemplate' | 'totalRecords'
-  > {
+interface TableProps extends Omit<
+  DataTableBaseProps<object[]>,
+  'currentPageReportTemplate' | 'paginator' | 'paginatorTemplate' | 'totalRecords'
+> {
   id: string;
   showPaginator?: boolean;
   children: ReactNode;
