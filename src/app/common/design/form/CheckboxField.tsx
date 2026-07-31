@@ -3,8 +3,10 @@ import { classNames } from 'primereact/utils';
 import { JSX } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-interface CheckboxFieldProps
-  extends Omit<CheckboxProps, 'id' | 'ref' | 'name' | 'value' | 'checked' | 'disabled' | 'onChange' | 'onBlur'> {
+interface CheckboxFieldProps extends Omit<
+  CheckboxProps,
+  'id' | 'ref' | 'name' | 'value' | 'checked' | 'disabled' | 'onChange' | 'onBlur'
+> {
   name: string;
   label?: string;
   helper?: string;

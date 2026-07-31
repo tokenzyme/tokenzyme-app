@@ -3,11 +3,10 @@ import { classNames } from 'primereact/utils';
 import { JSX } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-interface PasswordFieldProps
-  extends Omit<
-    PasswordProps,
-    'inputId' | 'inputRef' | 'name' | 'value' | 'disabled' | 'onChange' | 'onBlur' | 'autoComplete'
-  > {
+interface PasswordFieldProps extends Omit<
+  PasswordProps,
+  'inputId' | 'inputRef' | 'name' | 'value' | 'disabled' | 'onChange' | 'onBlur' | 'autoComplete'
+> {
   name: string;
   label?: string;
   helper?: string;

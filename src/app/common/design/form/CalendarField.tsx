@@ -4,20 +4,10 @@ import { classNames } from 'primereact/utils';
 import { JSX } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-interface CalendarFieldProps
-  extends Omit<
-    CalendarProps,
-    | 'inputId'
-    | 'inputRef'
-    | 'name'
-    | 'value'
-    | 'dateFormat'
-    | 'mask'
-    | 'maskSlotChar'
-    | 'locale'
-    | 'onChange'
-    | 'onBlur'
-  > {
+interface CalendarFieldProps extends Omit<
+  CalendarProps,
+  'inputId' | 'inputRef' | 'name' | 'value' | 'dateFormat' | 'mask' | 'maskSlotChar' | 'locale' | 'onChange' | 'onBlur'
+> {
   name: string;
   label?: string;
   actionLabel?: string;

@@ -3,8 +3,10 @@ import { classNames } from 'primereact/utils';
 import { JSX } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-interface TextFieldProps
-  extends Omit<InputTextProps, 'id' | 'ref' | 'name' | 'value' | 'disabled' | 'onChange' | 'onBlur'> {
+interface TextFieldProps extends Omit<
+  InputTextProps,
+  'id' | 'ref' | 'name' | 'value' | 'disabled' | 'onChange' | 'onBlur'
+> {
   name: string;
   label?: string;
   helper?: string;
