@@ -3100,21 +3100,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tabler/icons-react@npm:3.45.0":
-  version: 3.45.0
-  resolution: "@tabler/icons-react@npm:3.45.0"
+"@tabler/icons-react@npm:3.46.0":
+  version: 3.46.0
+  resolution: "@tabler/icons-react@npm:3.46.0"
   dependencies:
-    "@tabler/icons": "npm:3.45.0"
+    "@tabler/icons": "npm:3.46.0"
   peerDependencies:
     react: ">= 16"
-  checksum: 10c0/db728a8a35788e63aae68f201fac3c84803e6edd40fb3d271eb9c5d64b0dcf6a071226cdcc67cc7b157cef5cb931b7dfc783e68dd89092ec2d737177390d392d
+  checksum: 10c0/8fab7d3a9ec6b62724a1628b8bad68a7b503979e4418f97d057c442adc5257b227a08185a884d452d171983648e36fa92cd7bfe9457f693e9b67bbf4ecf8ec24
   languageName: node
   linkType: hard
 
-"@tabler/icons@npm:3.45.0":
-  version: 3.45.0
-  resolution: "@tabler/icons@npm:3.45.0"
-  checksum: 10c0/efd31c992267538a2390d697ce18cc472e85cbd644494df6a472c0233f3509469cc0eb5bf8091078da6503dfd53451a0f53f13af4f2e96a2c17fcb9af09a95f4
+"@tabler/icons@npm:3.46.0":
+  version: 3.46.0
+  resolution: "@tabler/icons@npm:3.46.0"
+  checksum: 10c0/c9671449c2f53fa7e329c487162f89a28417cdd5ce96cfa290fe21388724da303dd2297af3b39a88a74b02c36ce55598bc3cf6537dbddf548881da2c05f35f5e
   languageName: node
   linkType: hard
 
@@ -9152,18 +9152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.5.23":
-  version: 8.5.23
-  resolution: "postcss@npm:8.5.23"
-  dependencies:
-    nanoid: "npm:^3.3.16"
-    picocolors: "npm:^1.1.1"
-    source-map-js: "npm:^1.2.1"
-  checksum: 10c0/ed714e635b330bb42666ecdd0c0b4f30224ded15b0b0052d6bc2b92832f2cf17d1c1141359453f96f0a84f8fbf4c405a74df187f559163b8f31131b2535455aa
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.47, postcss@npm:^8.5.6":
+"postcss@npm:8.5.25, postcss@npm:^8.4.47, postcss@npm:^8.5.6":
   version: 8.5.25
   resolution: "postcss@npm:8.5.25"
   dependencies:
@@ -9371,9 +9360,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router@npm:7.18.1":
-  version: 7.18.1
-  resolution: "react-router@npm:7.18.1"
+"react-router@npm:7.18.2":
+  version: 7.18.2
+  resolution: "react-router@npm:7.18.2"
   dependencies:
     cookie: "npm:^1.0.1"
     set-cookie-parser: "npm:^2.6.0"
@@ -9383,7 +9372,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10c0/1a559de58d656bad5565f2232e4f4fab7e9f5282dfaf95bc24f195a06e7e85b281077fe5c21ed3ff527e3d90d930447e0d0bb0f0713950d2a56ad0f0377a7d09
+  checksum: 10c0/513b04adf020fcf95124557418e003d16b175765045332858d5817b045e49dfe33b529c4871c57b0cddf24fa5432589ffc45d1a9a5b398b069f02adb755fab15
   languageName: node
   linkType: hard
 
@@ -10643,7 +10632,7 @@ __metadata:
     "@hookform/resolvers": "npm:5.5.7"
     "@reown/appkit": "npm:1.8.23"
     "@reown/appkit-adapter-ethers": "npm:1.8.23"
-    "@tabler/icons-react": "npm:3.45.0"
+    "@tabler/icons-react": "npm:3.46.0"
     "@tanstack/react-query": "npm:5.101.4"
     "@types/lodash.snakecase": "npm:4.1.9"
     "@types/react": "npm:19.2.17"
@@ -10670,14 +10659,14 @@ __metadata:
     jotai: "npm:2.20.2"
     lightweight-charts: "npm:5.2.0"
     lodash.snakecase: "npm:4.1.1"
-    postcss: "npm:8.5.23"
+    postcss: "npm:8.5.25"
     postcss-import: "npm:16.1.1"
     prettier: "npm:3.9.6"
     primereact: "npm:10.9.8"
     react: "npm:19.2.8"
     react-dom: "npm:19.2.8"
     react-hook-form: "npm:7.83.0"
-    react-router: "npm:7.18.1"
+    react-router: "npm:7.18.2"
     serve: "npm:14.2.6"
     socket.io-client: "npm:4.8.3"
     tailwindcss: "npm:3.4.19"
