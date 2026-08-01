@@ -21,6 +21,7 @@ Built with React 19, Vite, Apollo Client, ethers and Reown AppKit.
 - [Building and deploying](#building-and-deploying)
 - [Contributing](#contributing)
 - [Security](#security)
+- [Donations](#donations)
 - [License](#license)
 
 ## How it fits together
@@ -219,6 +220,20 @@ Do **not** open a public issue for a vulnerability. Follow the disclosure proces
 | [tokenzyme-indexer](https://github.com/tokenzyme/tokenzyme-indexer) | Indexes contract events; streams live updates. |
 | [tokenzyme-app](https://github.com/tokenzyme/tokenzyme-app) | This repository. |
 | [tokenzyme-mobile](https://github.com/tokenzyme/tokenzyme-mobile) | Flutter mobile client. Embeds this app's chart route. |
+
+## Donations
+
+If this project helped you in any way, consider making a donation. It is not
+expected and nothing here is gated behind it.
+
+| Network | Address |
+| --- | --- |
+| EVM (Ethereum, Sonic, Base, Arbitrum, …) | `0x31c8EDeD9D516a7BD854457710B9629F13BBA4FD` |
+| Solana | `HsgFMPqjzUwbsd7dyFp2vjfLLLN6eG2Et2H9qmCBEBng` |
+
+> [!WARNING]
+> Send only on a network listed above, and check the address against this page on
+> GitHub rather than a copy elsewhere. Transfers cannot be reversed.
 
 ## License
 
