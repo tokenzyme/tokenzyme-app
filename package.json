@@ -38,7 +38,7 @@
     "serve": "14.2.6",
     "socket.io-client": "4.8.3",
     "type-fest": "4.41.0",
-    "zod": "4.4.3"
+    "zod": "4.6.6"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "5.0.7",
